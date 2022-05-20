@@ -9,7 +9,7 @@ volumes:
     driver_opts:
       type: "tmpfs"
       device: "tmpfs"
-#   ribat_db_vol:
+  ribat_db_vol:
 #   redis_vol: bunlar named volume, docker'in icinde tutuldugu icin persist volumea donusturcez
 
 services:
@@ -70,6 +70,7 @@ services:
   
   ribat_db:
     container_name: mysqldb
+    hostname: ribat_db
     platform: linux/x86_64
     image: mysql:8
     restart: always
@@ -81,8 +82,9 @@ services:
     # tmpfs:
     #   - /var/lib/mysql
     volumes:
-      #- /mnt/tmp/mysql:/var/lib/mysql
-      - ramdisk:/var/lib/mysql
+      #- /mnt/tmp/mysql:/var/lib/mysql #kendi olusturdugum tmpfs
+      #- ramdisk:/var/lib/mysql #tmpfs
+      - ribat_db_vol:/var/lib/mysql
     networks:
       - myag
 
