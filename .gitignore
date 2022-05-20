@@ -1,2 +1,2 @@
-certs/*
-db_vol/*
+/db_vol
+/certs
