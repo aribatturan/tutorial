@@ -24,7 +24,7 @@ services:
     # - "8080:80"
     volumes:
       - /home/ribat/Desktop/case2/haproxy/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg
-      - /home/ribat/Desktop/case2/certs/ribat.local.pem:/usr/local/etc/haproxy/ribat.local.pem
+      - /home/ribat/Desktop/case2/certs/ribat.turan.pem:/usr/local/etc/haproxy/ribat.turan.pem
     networks:
       - myag
 
